@@ -23,12 +23,19 @@
             --correct-green: #15803D;    
             --error-red: #B91C1C;        
             --light-orange: #FFF7ED;     /* Card fill & soft highlight */
+
+            /* MONOCHROME / GRAYSCALE ACCENTS FOR SUPPLEMENTARY WORDS */
+            --supp-bg: #F8FAFC;
+            --supp-header: #0F172A;
+            --supp-border: #CBD5E1;
+            --supp-tag: #E2E8F0;
+            --supp-text: #0F172A;
             
             /* STANDARD PINYIN FONT STACK */
             --pinyin-font: 'Andika', 'Century Gothic', 'Comic Sans MS', sans-serif;
         }
 
-        /* GLOBAL FONT SIZE MATCHING LESSON 10 TEMPLATE */
+        /* GLOBAL FONT SIZE MATCHING PROJECTOR TEMPLATE */
         html { font-size: 18px; }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,7 +112,7 @@
             height: 0;
         }
 
-        /* MAIN SLIDE STAGE MATCHING LESSON 10 */
+        /* MAIN SLIDE STAGE */
         .main-content { 
             margin: 0 auto; 
             flex-grow: 1; 
@@ -126,6 +133,30 @@
         .page-badge { background-color: #FFEDD5; color: #9A3412; font-size: 0.85rem; padding: 3px 10px; border-radius: 12px; font-weight: bold; }
         .translation { display: inline; font-size: 1.05rem; color: var(--text-sub); font-weight: normal; margin-left: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
+        /* DISTINCT MONOCHROME CARD FOR SUPPLEMENTARY WORDS */
+        .card-supp {
+            background-color: #FFFFFF;
+            border: 2px solid var(--supp-border);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+            margin-bottom: 1.8rem;
+            padding: 2rem;
+            border-top: 6px solid var(--supp-header);
+        }
+        .card-supp .card-title {
+            color: var(--supp-header);
+            border-bottom: 2px dashed var(--supp-border);
+        }
+        .supp-badge {
+            background-color: var(--supp-header);
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
         /* TABLES & HIGHLIGHTS WITH STANDARD PINYIN FONT */
         .vocab-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 1.1rem; }
         .vocab-table th, .vocab-table td { text-align: left; padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
@@ -140,6 +171,16 @@
         .vocab-collo { color: var(--text-sub); margin-bottom: 4px; font-size: 1.1rem; }
         .collo-target { font-weight: bold; color: var(--primary-color); }
         .vocab-sent { color: var(--primary-color); font-weight: 500; font-size: 1.15rem; }
+
+        /* MONOCHROME VOCABULARY TABLE STYLING */
+        .supp-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 1.1rem; }
+        .supp-table th, .supp-table td { text-align: left; padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--supp-border); vertical-align: middle; }
+        .supp-table th { background-color: #F1F5F9; color: var(--supp-header); font-size: 0.95rem; text-transform: uppercase; }
+        .supp-num { font-weight: bold; color: #475569; width: 8%; }
+        .supp-pinyin { font-weight: bold; color: #0F172A; width: 25%; font-size: 1.2rem; font-family: var(--pinyin-font) !important; }
+        .supp-collo { color: #475569; margin-bottom: 4px; font-size: 1.1rem; font-family: var(--pinyin-font) !important; }
+        .supp-collo-target { font-weight: bold; color: #0F172A; text-decoration: underline; }
+        .supp-sent { color: #1E293B; font-weight: 500; font-size: 1.15rem; font-family: var(--pinyin-font) !important; }
 
         /* TIME MATRIX VISUAL TABLE STYLING */
         .time-matrix-table {
@@ -262,7 +303,7 @@
         .interactive-dlg.revealed .dlg-py { display: block; animation: fadeIn 0.3s ease-in-out; }
         .interactive-dlg.revealed .dlg-eng { color: #94A3B8; } 
 
-        /* INTERACTIVE KEY SENTENCE CARDS (SHOW PINYIN, CLICK FOR ENGLISH) */
+        /* INTERACTIVE KEY SENTENCE CARDS */
         .interactive-sentence {
             background-color: #FFFFFF;
             border-left: 6px solid var(--primary-color);
@@ -401,13 +442,13 @@
             <div class="card">
                 <div class="card-title">Course Roadmap & Textbook Coverage</div>
                 <div class="dlg-turn"><strong>Main Topics:</strong> Expressing Time, Schedules, Dates, Age, Birthplace, 12 Chinese Zodiac Animals, Birthday Customs, and Party Celebrations.</div>
-                <div class="dlg-turn"><strong>Textbook Coverage:</strong> New Practical Chinese Reader 1, Lesson 9 (Pages 129 to 150)</div>
+                <div class="dlg-turn"><strong>Textbook Coverage:</strong> New Practical Chinese Reader 1, Lesson 9 (Pages 129 to 150).</div>
             </div>
 
             <div class="card">
                 <div class="card-title">Lesson Modules Structure</div>
                 <div class="dlg-turn"><strong>1. Section 1 (Text 1 Prep):</strong> Schedule & Appointments ➔ Dates, Age & Origin ➔ Birthday Customs & Proposals ➔ <strong>Text 1</strong></div>
-                <div class="dlg-turn"><strong>2. Section 2 (Text 2 Prep):</strong> Birthday Wishes & Feelings ➔ Birthday Feast & Future Actions ➔ <strong>Text 2</strong></div>
+                <div class="dlg-turn"><strong>2. Section 2 (Text 2 Prep):</strong> Birthday Wishes & Feelings ➔ Birthday Feast & Future Actions (Including Supplementary Vocabulary) ➔ <strong>Text 2</strong></div>
                 <div class="dlg-turn"><strong>3. Wrap-up:</strong> Key Sentence Review & Speaking Assignments</div>
             </div>
 
@@ -530,7 +571,7 @@
                     </div>
                 </div>
 
-                <!-- VISUAL TIME MATRIX TABLE (REF: CANVA SLIDES 7 & 8) -->
+                <!-- VISUAL TIME MATRIX TABLE -->
                 <div class="rule-box" style="margin-top: 1rem;">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Usage Matrix for "<span class="grammar-hl">shàng</span>" & "<span class="grammar-hl">xià</span>" in Time Expressions:</strong>
                     <p style="margin-top: 6px; color: var(--text-sub);">
@@ -705,101 +746,18 @@
                 </p>
 
                 <div class="zodiac-grid">
-                    <!-- 1. RAT -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐭</div>
-                        <div class="zodiac-pinyin">shǔ shǔ</div>
-                        <div class="zodiac-english">Rat</div>
-                        <div class="zodiac-years">1948, 1960, 1972,<br>1984, 1996, 2008, 2020</div>
-                    </div>
-
-                    <!-- 2. OX -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐂</div>
-                        <div class="zodiac-pinyin">shǔ niú</div>
-                        <div class="zodiac-english">Ox</div>
-                        <div class="zodiac-years">1949, 1961, 1973,<br>1985, 1997, 2009, 2021</div>
-                    </div>
-
-                    <!-- 3. TIGER -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐯</div>
-                        <div class="zodiac-pinyin">shǔ hǔ</div>
-                        <div class="zodiac-english">Tiger</div>
-                        <div class="zodiac-years">1950, 1962, 1974,<br>1986, 1998, 2010, 2022</div>
-                    </div>
-
-                    <!-- 4. RABBIT -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐰</div>
-                        <div class="zodiac-pinyin">shǔ tù</div>
-                        <div class="zodiac-english">Rabbit</div>
-                        <div class="zodiac-years">1951, 1963, 1975,<br>1987, 1999, 2011, 2023</div>
-                    </div>
-
-                    <!-- 5. DRAGON -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐲</div>
-                        <div class="zodiac-pinyin">shǔ lóng</div>
-                        <div class="zodiac-english">Dragon</div>
-                        <div class="zodiac-years">1952, 1964, 1976,<br>1988, 2000, 2012, 2024</div>
-                    </div>
-
-                    <!-- 6. SNAKE -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐍</div>
-                        <div class="zodiac-pinyin">shǔ shé</div>
-                        <div class="zodiac-english">Snake</div>
-                        <div class="zodiac-years">1953, 1965, 1977,<br>1989, 2001, 2013, 2025</div>
-                    </div>
-
-                    <!-- 7. HORSE -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐴</div>
-                        <div class="zodiac-pinyin">shǔ mǎ</div>
-                        <div class="zodiac-english">Horse</div>
-                        <div class="zodiac-years">1954, 1966, 1978,<br>1990, 2002, 2014, 2026</div>
-                    </div>
-
-                    <!-- 8. GOAT -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐐</div>
-                        <div class="zodiac-pinyin">shǔ yáng</div>
-                        <div class="zodiac-english">Goat</div>
-                        <div class="zodiac-years">1955, 1967, 1979,<br>1991, 2003, 2015, 2027</div>
-                    </div>
-
-                    <!-- 9. MONKEY -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐵</div>
-                        <div class="zodiac-pinyin">shǔ hóu</div>
-                        <div class="zodiac-english">Monkey</div>
-                        <div class="zodiac-years">1956, 1968, 1980,<br>1992, 2004, 2016, 2028</div>
-                    </div>
-
-                    <!-- 10. ROOSTER -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐔</div>
-                        <div class="zodiac-pinyin">shǔ jī</div>
-                        <div class="zodiac-english">Rooster</div>
-                        <div class="zodiac-years">1957, 1969, 1981,<br>1993, 2005, 2017, 2029</div>
-                    </div>
-
-                    <!-- 11. DOG -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐶</div>
-                        <div class="zodiac-pinyin">shǔ gǒu</div>
-                        <div class="zodiac-english">Dog</div>
-                        <div class="zodiac-years">1958, 1970, 1982,<br>1994, 2006, 2018, 2030</div>
-                    </div>
-
-                    <!-- 12. PIG -->
-                    <div class="zodiac-card">
-                        <div class="zodiac-icon">🐷</div>
-                        <div class="zodiac-pinyin">shǔ zhū</div>
-                        <div class="zodiac-english">Pig</div>
-                        <div class="zodiac-years">1959, 1971, 1983,<br>1995, 2007, 2019, 2031</div>
-                    </div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐭</div><div class="zodiac-pinyin">shǔ shǔ</div><div class="zodiac-english">Rat</div><div class="zodiac-years">1948, 1960, 1972, 1984, 1996, 2008, 2020</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐂</div><div class="zodiac-pinyin">shǔ niú</div><div class="zodiac-english">Ox</div><div class="zodiac-years">1949, 1961, 1973, 1985, 1997, 2009, 2021</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐯</div><div class="zodiac-pinyin">shǔ hǔ</div><div class="zodiac-english">Tiger</div><div class="zodiac-years">1950, 1962, 1974, 1986, 1998, 2010, 2022</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐰</div><div class="zodiac-pinyin">shǔ tù</div><div class="zodiac-english">Rabbit</div><div class="zodiac-years">1951, 1963, 1975, 1987, 1999, 2011, 2023</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐲</div><div class="zodiac-pinyin">shǔ lóng</div><div class="zodiac-english">Dragon</div><div class="zodiac-years">1952, 1964, 1976, 1988, 2000, 2012, 2024</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐍</div><div class="zodiac-pinyin">shǔ shé</div><div class="zodiac-english">Snake</div><div class="zodiac-years">1953, 1965, 1977, 1989, 2001, 2013, 2025</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐴</div><div class="zodiac-pinyin">shǔ mǎ</div><div class="zodiac-english">Horse</div><div class="zodiac-years">1954, 1966, 1978, 1990, 2002, 2014, 2026</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐐</div><div class="zodiac-pinyin">shǔ yáng</div><div class="zodiac-english">Goat</div><div class="zodiac-years">1955, 1967, 1979, 1991, 2003, 2015, 2027</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐵</div><div class="zodiac-pinyin">shǔ hóu</div><div class="zodiac-english">Monkey</div><div class="zodiac-years">1956, 1968, 1980, 1992, 2004, 2016, 2028</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐔</div><div class="zodiac-pinyin">shǔ jī</div><div class="zodiac-english">Rooster</div><div class="zodiac-years">1957, 1969, 1981, 1993, 2005, 2017, 2029</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐶</div><div class="zodiac-pinyin">shǔ gǒu</div><div class="zodiac-english">Dog</div><div class="zodiac-years">1958, 1970, 1982, 1994, 2006, 2018, 2030</div></div>
+                    <div class="zodiac-card"><div class="zodiac-icon">🐷</div><div class="zodiac-pinyin">shǔ zhū</div><div class="zodiac-english">Pig</div><div class="zodiac-years">1959, 1971, 1983, 1995, 2007, 2019, 2031</div></div>
                 </div>
             </div>
 
@@ -808,7 +766,7 @@
                 <div class="card-title">Grammar: Dates Order, Nominal Predicate & Origin (Pg 141-143)</div>
                 
                 <div class="rule-box">
-                    <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Expressing Dates: Big to Small Order (Pg 141–142)</strong>
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Expressing Dates: Big to Small Order (Pg 141–142):</strong>
                     
                     <div class="sentence-builder" style="margin-top: 10px;">
                         <div class="slot slot-time"><span class="slot-label">Year</span>Year (nián)</div>
@@ -984,7 +942,7 @@
                 <div class="card-title">Grammar: Time Clauses & Proposals (Pg 143)</div>
                 
                 <div class="rule-box">
-                    <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Time Clause Structure: "<span class="grammar-hl">... de shíhou</span>" (When / While)</strong>
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Time Clause Structure: "<span class="grammar-hl">... de shíhou</span>" (When / While):</strong>
                     <div class="pinyin-box">
                         <div>• Zhōngguó rén <strong>guò shēngri de shíhou</strong> chī dàngāo ma? <span class="translation">(Do Chinese people eat cake when celebrating birthdays?)</span></div>
                         <div>• <strong>Chīfàn de shíhou</strong>, wǒ bú kàn shū. <span class="translation">(When eating, I don't read books.)</span></div>
@@ -992,7 +950,7 @@
                 </div>
 
                 <div class="rule-box" style="margin-top: 1rem;">
-                    <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Suggestion Structure: "<span class="grammar-hl">... hǎo ma?</span>" (Pg 143)</strong>
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Suggestion Structure: "<span class="grammar-hl">... hǎo ma?</span>" (Pg 143):</strong>
                     <div style="background: white; padding: 12px; border-radius: 8px; margin-top: 10px;">
                         <span class="vocab-pinyin" style="font-size: 1.15rem; width: auto;">Wǒ mǎi yí ge dà dàngāo, <strong>hǎo ma</strong>?</span>
                         <br><br>
@@ -1184,11 +1142,12 @@
         <!-- MODULE 5: FEAST & FUTURE ACTIONS (TEXT 2 PREP) -->
         <section id="nav-7" class="tab-content">
             <div class="content-header">
-                <h2>Feast & Future Actions (Text 2 Prep: Pg 134-135)</h2>
+                <h2>Feast & Future Actions (Text 2 Prep: Pg 134-136)</h2>
             </div>
 
+            <!-- CORE VOCABULARY -->
             <div class="card">
-                <div class="card-title">Vocabulary: Feast & Actions (Pg 135)</div>
+                <div class="card-title">Core Vocabulary: Feast & Actions (Pg 135)</div>
                 <table class="vocab-table">
                     <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
                     <tbody>
@@ -1218,6 +1177,165 @@
                             <td>
                                 <div class="vocab-collo">Collocation: chī <span class="collo-target">shòumiàn</span></div>
                                 <div class="vocab-sent">Sentence: Wǒmen hái chī shòumiàn.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SUPPLEMENTARY VOCABULARY IN MONOCHROME HIGH-CONTRAST CARD -->
+            <div class="card-supp">
+                <div class="card-title">
+                    <span>Supplementary Words: Food, Drinks & Related Words</span>
+                    <span class="supp-badge">Pg 135–136 (Extra Vocabulary)</span>
+                </div>
+                <p style="color: var(--text-sub); font-size: 1.05rem; margin-bottom: 1rem;">
+                    Textbook Supplementary Words for talking about everyday meals, dining options, and drinks:
+                </p>
+
+                <table class="supp-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Pinyin</th>
+                            <th>Meaning</th>
+                            <th>Collocation & Example Sentence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="supp-num">#S1</td>
+                            <td class="supp-pinyin">kělè 🥤</td>
+                            <td>coke</td>
+                            <td>
+                                <div class="supp-collo">Collocation: yì píng <span class="supp-collo-target">kělè</span> / hē <span class="supp-collo-target">kělè</span></div>
+                                <div class="supp-sent">Sentence: Wǒ hái mǎi le sān píng kělè.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S2</td>
+                            <td class="supp-pinyin">Xuěbì 🍾</td>
+                            <td>Sprite</td>
+                            <td>
+                                <div class="supp-collo">Collocation: sān píng <span class="supp-collo-target">Xuěbì</span> / hē <span class="supp-collo-target">Xuěbì</span></div>
+                                <div class="supp-sent">Sentence: Wǒ mǎi sān píng Xuěbì, hǎo ma?</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S3</td>
+                            <td class="supp-pinyin">píjiǔ 🍺</td>
+                            <td>beer</td>
+                            <td>
+                                <div class="supp-collo">Collocation: liù píng <span class="supp-collo-target">píjiǔ</span> / hē <span class="supp-collo-target">píjiǔ</span></div>
+                                <div class="supp-sent">Sentence: Wǒmen bù hē píjiǔ, hē hóng pútaojiǔ.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S4</td>
+                            <td class="supp-pinyin">niúnǎi 🥛</td>
+                            <td>milk</td>
+                            <td>
+                                <div class="supp-collo">Collocation: bā píng <span class="supp-collo-target">niúnǎi</span> / hē <span class="supp-collo-target">niúnǎi</span></div>
+                                <div class="supp-sent">Sentence: Dìdi měitiān hē niúnǎi.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S5</td>
+                            <td class="supp-pinyin">hànbǎo 🍔</td>
+                            <td>hamburger</td>
+                            <td>
+                                <div class="supp-collo">Collocation: wǔ ge <span class="supp-collo-target">hànbǎo</span> / chī <span class="supp-collo-target">hànbǎo</span></div>
+                                <div class="supp-sent">Sentence: Wǒ mǎi wǔ ge hànbǎo, hǎo ma?</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S6</td>
+                            <td class="supp-pinyin">règǒu 🌭</td>
+                            <td>hotdog</td>
+                            <td>
+                                <div class="supp-collo">Collocation: bā ge <span class="supp-collo-target">règǒu</span> / chī <span class="supp-collo-target">règǒu</span></div>
+                                <div class="supp-sent">Sentence: Tā xǐhuan chī règǒu.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S7</td>
+                            <td class="supp-pinyin">miànbāo 🍞</td>
+                            <td>bread</td>
+                            <td>
+                                <div class="supp-collo">Collocation: jiǔ ge <span class="supp-collo-target">miànbāo</span> / chī <span class="supp-collo-target">miànbāo</span></div>
+                                <div class="supp-sent">Sentence: Wǒmen chī miànbāo hé dàngāo.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S8</td>
+                            <td class="supp-pinyin">zhōngcān 🥢</td>
+                            <td>Chinese food</td>
+                            <td>
+                                <div class="supp-collo">Collocation: chī <span class="supp-collo-target">zhōngcān</span> / xǐhuan <span class="supp-collo-target">zhōngcān</span></div>
+                                <div class="supp-sent">Sentence: Nǐ xǐhuan chī zhōngcān ma?</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S9</td>
+                            <td class="supp-pinyin">xīcān 🍴</td>
+                            <td>Western food</td>
+                            <td>
+                                <div class="supp-collo">Collocation: chī <span class="supp-collo-target">xīcān</span> / xǐhuan <span class="supp-collo-target">xīcān</span></div>
+                                <div class="supp-sent">Sentence: Wǒ xǐhuan zhōngcān, yě xǐhuan xīcān.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S10</td>
+                            <td class="supp-pinyin">chá 🍵</td>
+                            <td>tea</td>
+                            <td>
+                                <div class="supp-collo">Collocation: hē <span class="supp-collo-target">chá</span> / Zhōngguó <span class="supp-collo-target">chá</span></div>
+                                <div class="supp-sent">Sentence: Zhōngguó rén dōu xǐhuan hē chá.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S11</td>
+                            <td class="supp-pinyin">mǐfàn 🍚</td>
+                            <td>(cooked) rice</td>
+                            <td>
+                                <div class="supp-collo">Collocation: chī <span class="supp-collo-target">mǐfàn</span> / yì wǎn <span class="supp-collo-target">mǐfàn</span></div>
+                                <div class="supp-sent">Sentence: Wǒ bú tài xǐhuan chī mǐfàn.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S12</td>
+                            <td class="supp-pinyin">nǚ'ér 👧</td>
+                            <td>daughter</td>
+                            <td>
+                                <div class="supp-collo">Collocation: yí ge <span class="supp-collo-target">nǚ'ér</span> / tā de <span class="supp-collo-target">nǚ'ér</span></div>
+                                <div class="supp-sent">Sentence: Tā yǒu yí ge nǚ'ér hé yí ge érzi.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S13</td>
+                            <td class="supp-pinyin">érzi 👦</td>
+                            <td>son</td>
+                            <td>
+                                <div class="supp-collo">Collocation: yí ge <span class="supp-collo-target">érzi</span> / tā de <span class="supp-collo-target">érzi</span></div>
+                                <div class="supp-sent">Sentence: Nǚ'ér jiǔ suì, érzi wǔ suì.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S14</td>
+                            <td class="supp-pinyin">wǎnshang 🌙</td>
+                            <td>evening, night</td>
+                            <td>
+                                <div class="supp-collo">Collocation: jīntiān <span class="supp-collo-target">wǎnshang</span> / xīngqīrì <span class="supp-collo-target">wǎnshang</span></div>
+                                <div class="supp-sent">Sentence: Xīngqīrì wǎnshang wǒmen yǒu yí ge jùhuì.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">#S15</td>
+                            <td class="supp-pinyin">diàn 🏬</td>
+                            <td>store, shop</td>
+                            <td>
+                                <div class="supp-collo">Collocation: kǎoyā <span class="supp-collo-target">diàn</span> / dàngāo <span class="supp-collo-target">diàn</span></div>
+                                <div class="supp-sent">Sentence: Wǒmen zài Běijīng kǎoyā diàn chī kǎoyā.</div>
                             </td>
                         </tr>
                     </tbody>
@@ -1371,7 +1489,7 @@
 
             <div class="card">
                 <div class="card-title">Homework Assignments</div>
-                <div class="dlg-turn">1. Review all 32 vocabulary items from Lesson 9 (Text 1 and Text 2).</div>
+                <div class="dlg-turn">1. Review all 32 vocabulary items from Lesson 9 (Text 1 and Text 2) and the 15 Supplementary Words.</div>
                 <div class="dlg-turn">2. Practice reading Text 1 and Text 2 aloud until fluent.</div>
                 <div class="dlg-turn">3. Complete the reading comprehension and paraphrasing exercise on Page 141.</div>
             </div>
